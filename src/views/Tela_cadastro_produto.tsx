@@ -83,6 +83,20 @@ const Tela_cadastro_produto: React.FC = () => {
             if(!resposta.ok) {
                 throw new Error("Erro na resposta da API")
             }
+
+            Alert.alert(
+                "Sucesso!",
+                "Produto cadastro com sucesso.",
+                [
+                    {
+                        text: "OK",
+                        onPress: () => {
+                            reset();
+                            navegacao.navigate("Listagem");
+                        }
+                    }
+                ]
+            )
         } catch (error) {
 
         }
